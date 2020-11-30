@@ -38,7 +38,6 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
 
     @Override
     public TimeEntry find(long id) {
-        System.out.println("hello");
         try {
             return jdbcTemplate.queryForObject(
                     "SELECT * FROM time_entries WHERE id = ?", new TimeEntryMapper(),
