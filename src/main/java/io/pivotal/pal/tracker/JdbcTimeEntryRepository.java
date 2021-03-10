@@ -41,8 +41,8 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
         System.out.println("hello");
         try {
             return jdbcTemplate.queryForObject(
-                    "SELECT * FROM time_entries WHERE id = ?",
-                    new Object[]{id}, new TimeEntryMapper());
+                    "SELECT * FROM time_entries WHERE id = ?", new TimeEntryMapper(),
+                    new Object[]{id});
         } catch (Exception e) {
             return null;
         }
